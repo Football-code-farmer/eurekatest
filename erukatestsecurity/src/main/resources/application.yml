@@ -1,0 +1,44 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: SECURITY
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-bp13n346h0e86y28vxo.mysql.rds.aliyuncs.com:3306/mysql_test?characterEncoding=utf-8
+    username: aliyun_mysql
+    password: 13616962575swh@
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+#忽略路径
+secure:
+  ignored:
+    url:
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /swagger/**
+      - /index
+      - /register
+      - /jwt/login
+      - /login
+      - /out
+      - /test
+
+
+
+jwt:
+  tokenHeader: Authorization #JWT存储的请求头
+  secret: mySecret #JWT加解密使用的密钥
+  expiration: 604800 #JWT的超期限时间(60*60*24)token有效期为一天
+  tokenHead: Bearer  #JWT负载中拿到开头
