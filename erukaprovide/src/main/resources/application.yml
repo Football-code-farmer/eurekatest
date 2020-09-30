@@ -13,7 +13,7 @@ spring:
     name: ERUKAPROVIDE
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mysql_test?serverTimezone=CTT&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/tx_logger?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC
     username: root
     password: root
   data:
@@ -51,6 +51,25 @@ spring:
       mail.smtp.starttls.required: true
       mail.smtp.ssl.enable: true
       mail.display.sendmail: 1353208500@qq.com
+
+  main:
+    allow-bean-definition-overriding: true
+
+tx-lcn:
+  ribbon:
+    loadbalancer:
+      dtx:
+        enabled: true
+  logger:
+    enabled: true
+    driver-class-name: com.mysql.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/tx_logger?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC
+    username: root
+    password: root
+
+logging:
+  level:
+    com.meikinfo.erukaprovide.erukaprovide: debug
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

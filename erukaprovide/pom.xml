@@ -13,6 +13,14 @@
 
 
     <dependencies>
+
+        <!--引入common依赖-->
+        <dependency>
+            <groupId>com.meikinfo.erukatest</groupId>
+            <artifactId>commoninfo</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>

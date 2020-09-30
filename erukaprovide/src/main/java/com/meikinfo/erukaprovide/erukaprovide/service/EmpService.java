@@ -1,12 +1,16 @@
 package com.meikinfo.erukaprovide.erukaprovide.service;
 
+import cn.hutool.core.lang.UUID;
 import cn.hutool.core.util.ObjectUtil;
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.meikinfo.erukaprovide.erukaprovide.config.HighLightResultMapper;
 import com.meikinfo.erukaprovide.erukaprovide.dao.PersonMapper;
+import com.meikinfo.erukaprovide.erukaprovide.dao.TLoggerMapper;
 import com.meikinfo.erukaprovide.erukaprovide.domain.EsPerson;
 import com.meikinfo.erukaprovide.erukaprovide.domain.Person;
+import com.meikinfo.erukaprovide.erukaprovide.domain.TLogger;
 import com.meikinfo.erukaprovide.erukaprovide.repository.PersonRepository;
 import com.meikinfo.erukaprovide.erukaprovide.util.EnumUtils;
 import org.elasticsearch.index.query.*;
@@ -20,6 +24,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -46,6 +51,8 @@ public class EmpService {
 
     @Resource
     private ElasticsearchTemplate elasticsearchTemplate;
+    @Autowired
+    private TLoggerMapper tLoggerMapper;
 
 
     public List<Person> loadEmpsForDb(Integer page, Integer size,Long politicid, Long posid) {
@@ -92,5 +99,12 @@ public class EmpService {
         });
         return peoples;
 
+    }
+
+    @LcnTransaction//分布式事务
+    @Transactional //本地事务
+    public void txmanagerTest() {
+        TLogger txlogger = TLogger.builder().appName("test").id(UUID.randomUUID().getMostSignificantBits()).build();
+        tLoggerMapper.insert(txlogger);
     }
 }

@@ -22,6 +22,9 @@ public interface EmpServiceRemote {
     @GetMapping(value = "/employee/basic/emp")
     public List<Person> loadEmps(@RequestParam Integer page, @RequestParam Integer size);
 
+    @GetMapping(value = "/employee/txmanagerTest")
+    public void txmanagerTest();
+
 //    public interface GetNameRemote {
 //        @GetMapping("/provide/{id}")
 //        public String provideMessage(@PathVariable("id") String id);

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="javaMapperPackage" value="com.meikinfo.erukaprovide.erukaprovide.dao" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/erukaprovide/src/main/java" />
+        <option name="javaModelPackage" value="com.meikinfo.erukaprovide.erukaprovide.domain" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/erukaprovide/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="erukaprovide" />
+        <option name="lombokAllArgConstructor" value="true" />
+        <option name="lombokBuilderAnnotation" value="true" />
+        <option name="lombokDataAnnotation" value="true" />
+        <option name="lombokNoArgsConstructor" value="true" />
+        <option name="modelAddToString" value="true" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="erukaprovide">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.meikinfo.erukaprovide.erukaprovide.dao" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/erukaprovide/src/main/java" />
+                  <option name="javaModelPacakge" value="com.meikinfo.erukaprovide.erukaprovide.domain" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/erukaprovide/src/main/java" />
+                  <option name="xmlPackage" value="mapper" />
+                  <option name="xmlPath" value="D:\workSpace\myProject\eurekatest\erukaprovide\src\main\resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="p3CComment" value="true" />
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="tx_logger:t_logger">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="TLogger" />
+                  <option name="moduleName" value="erukaprovide" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="useExample" value="true" />
+        <option name="xmlMapperPackage" value="mapper" />
+        <option name="xmlMapperPath" value="D:\workSpace\myProject\eurekatest\erukaprovide\src\main\resources" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>

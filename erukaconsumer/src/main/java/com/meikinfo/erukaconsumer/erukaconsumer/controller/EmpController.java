@@ -2,6 +2,8 @@ package com.meikinfo.erukaconsumer.erukaconsumer.controller;
 
 import cn.hutool.core.lang.Dict;
 import com.meikinfo.erukaconsumer.erukaconsumer.domain.Person;
+import com.meikinfo.erukaconsumer.erukaconsumer.service.EmpServiceRemote;
+import com.meikinfo.erukaconsumer.erukaconsumer.service.Empservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +27,8 @@ public class EmpController {
 
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private Empservice empservice;
 
     @GetMapping(value = "/employee/basic/emp")
     public List<Person> loadEmps(
@@ -47,6 +51,11 @@ public class EmpController {
     public Dict loadBaseData(){
         Dict baseDict = restTemplate.getForObject("http://ERUKAPROVIDE/employee/basic/basicdata", Dict.class);
         return baseDict;
+    }
+
+    @GetMapping(value = "/employee/txmanager")
+    public void txmanagerTest(){
+        empservice.txmanagerTest();
     }
 
 }

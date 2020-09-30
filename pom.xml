@@ -18,6 +18,8 @@
         <module>erukaserver</module>
         <module>erukaconsumer</module>
         <module>erukaprovide</module>
+        <module>commoninfo</module>
+        <module>txmanager</module>
     </modules>
 
     <properties>

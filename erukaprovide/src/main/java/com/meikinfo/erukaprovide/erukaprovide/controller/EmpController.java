@@ -25,6 +25,7 @@ public class EmpController {
     @Autowired
     private EmpService empService;
 
+
     @GetMapping(value = "/employee/basic/emp")
     public List<Person> loadEmps(
             @RequestParam(defaultValue = "1") Integer page,
@@ -47,6 +48,11 @@ public class EmpController {
         }
 
         return Dict.create().set("politics",PoliticsDicts).set("positions",PositionDicts);
+    }
+
+    @GetMapping(value = "/employee/txmanagerTest")
+    public void txmanagerTest(){
+        empService.txmanagerTest();
     }
 
 }
