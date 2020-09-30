@@ -10,6 +10,7 @@ public class TxmanagerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(TxmanagerApplication.class, args);
+        System.out.println("=========================");
     }
 
 }
